@@ -208,7 +208,7 @@
     if(window.gtag) gtag('event','conversion',{send_to:'AW-XXXX/form'});
     // Local preview + pre-Formspree fallback: go to thank-you page.
     var f=e.target;
-    if(f.action.indexOf('REPLACE_ME')>-1){ e.preventDefault(); window.location.href='thank-you.html'; return false; }
+    if(f.action.indexOf('REPLACE_ME')>-1){ e.preventDefault(); window.location.href='thank-you'; return false; }
     // When Formspree is connected, add a hidden _next field pointing to the thank-you URL.
     return true;
   }
