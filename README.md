@@ -22,12 +22,16 @@ Just double-click any `.html` file, or open it in your browser. Everything works
 except the fonts (they load from Google). Submitting the form locally sends you to the
 thank-you page so you can see the whole flow.
 
-## Before it goes live — 3 things to wire up
+## Before it goes live — 1 thing left to wire up
 
-1. **Form → Formspree.** In each page find `action="https://formspree.io/f/REPLACE_ME"`
-   and paste your real Formspree endpoint. Add a hidden field so it returns to the
-   thank-you page:
-   `<input type="hidden" name="_next" value="https://YOURDOMAIN/thank-you.html">`
+1. **Forms — DONE (2026-07-21).** Every page now has TWO live quote forms (hero +
+   bottom of page), both posting to **Web3Forms** with the same access key as the
+   main website's contact form → delivers to **northshadelawn23@gmail.com**.
+   Each email arrives with subject "NEW GOOGLE ADS LEAD — [Service] Landing Page"
+   plus a "Lead Source" line saying which page and which form (top/bottom), so the
+   client always knows the lead came from Google Ads. Honeypot spam protection
+   included. On success the visitor is sent to `thank-you.html` (the conversion
+   page). Note: Web3Forms blocks headless/bot browsers — test by hand, not scripts.
 
 2. **Conversion tracking.** Paste your Google Ads / GA4 `gtag.js` snippet where each page
    says `<!-- TODO(tracking) -->`, then swap the `AW-XXXX/call` and `AW-XXXX/form`
