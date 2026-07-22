@@ -250,7 +250,7 @@
     e.preventDefault();
     var f=e.target, btn=f.querySelector('.submit');
     if(f.botcheck && f.botcheck.checked) return false; // honeypot: silently drop bots
-    if(window.gtag) gtag('event','conversion',{send_to:'AW-XXXX/form'});
+    if(window.gtag) gtag('event','conversion',{send_to:'AW-18242425589/rX41CNOSrNQcEPWl1fpD',value:1.0,currency:'USD'});
     btn.disabled=true; btn.textContent='Sending…';
     fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
       .then(function(r){ return r.json(); })
