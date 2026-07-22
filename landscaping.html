@@ -250,7 +250,14 @@
     e.preventDefault();
     var f=e.target, btn=f.querySelector('.submit');
     if(f.botcheck && f.botcheck.checked) return false; // honeypot: silently drop bots
-    if(window.gtag) gtag('event','conversion',{send_to:'AW-18242425589/rX41CNOSrNQcEPWl1fpD',value:1.0,currency:'USD'});
+    if(window.gtag){
+      // Enhanced conversions: pass the lead's own details (Google hashes them)
+      var digits=(f.phone.value||'').replace(/\D/g,''); if(digits.length===10) digits='1'+digits;
+      var parts=(f.name.value||'').trim().split(/\s+/);
+      gtag('set','user_data',{ phone_number: digits?('+'+digits):undefined,
+        address:{ first_name: parts[0]||undefined, last_name: parts.length>1?parts[parts.length-1]:undefined } });
+      gtag('event','conversion',{send_to:'AW-18242425589/rX41CNOSrNQcEPWl1fpD',value:1.0,currency:'USD'});
+    }
     btn.disabled=true; btn.textContent='Sending…';
     fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
       .then(function(r){ return r.json(); })
