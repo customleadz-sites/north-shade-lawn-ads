@@ -7,6 +7,12 @@ Clean URLs: `/landscaping`, `/retaining-walls`, `/paver-patios`, `/thank-you`.
 pages never compete with the main site in Google search — has zero effect on the main
 site's SEO. Push to `master` = auto-deploy.
 
+**Dynamic town headlines (2026-07-21).** With `?loc={loc_physical_ms}` on the URL
+(set as the campaign's Final URL suffix in Google Ads), the H1 gains the searcher's
+town: "Custom Landscaping **in Greenville**, ...". Table = `loc-headline.js` (224
+towns/counties covering the campaign's 25 targeted Michigan counties, built from
+Google's geotargets CSV + Census county data). Unknown/missing ID = normal headline.
+
 **Separate from the main marketing site.** These are standalone, single-goal conversion
 pages built for the Google Ads campaign. They do **not** share the website's git repo or
 Vercel project — this is a brand-new, self-contained folder.
