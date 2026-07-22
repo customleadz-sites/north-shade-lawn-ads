@@ -1,5 +1,12 @@
 # North Shade Lawn — Google Ads Landing Pages
 
+**LIVE at https://lp.northshadelawnllc.com** (deployed 2026-07-21 — Vercel project
+`northshadelawnlp`, repo `customleadz-sites/north-shade-lawn-ads`, branch `master`).
+Clean URLs: `/landscaping`, `/retaining-walls`, `/paver-patios`, `/thank-you`.
+**Deliberately noindexed** (meta noindex,nofollow + robots.txt Disallow) so these ad
+pages never compete with the main site in Google search — has zero effect on the main
+site's SEO. Push to `master` = auto-deploy.
+
 **Separate from the main marketing site.** These are standalone, single-goal conversion
 pages built for the Google Ads campaign. They do **not** share the website's git repo or
 Vercel project — this is a brand-new, self-contained folder.
