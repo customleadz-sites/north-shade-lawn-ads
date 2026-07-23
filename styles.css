@@ -289,6 +289,8 @@ details p{padding:0 6px 20px 2px;color:#5a6157;font-size:1rem}
 .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}.d5{animation-delay:.45s}
 @media(prefers-reduced-motion:reduce){.reveal{animation:none;opacity:1}}
 
-/* gallery captions */
-.gallery figure{display:flex;flex-direction:column}
+/* gallery captions — move the crop/radius to the image so captions aren't clipped */
+.gallery figure{display:flex;flex-direction:column;overflow:visible;aspect-ratio:auto;box-shadow:none;border-radius:0}
+.gallery img{aspect-ratio:4/3;border-radius:14px;box-shadow:var(--shadow-sm);height:auto}
+.gallery figure:hover img{transform:none}
 .gallery figcaption{font-size:.86rem;color:#5a6157;padding:8px 6px 0;font-weight:500}
