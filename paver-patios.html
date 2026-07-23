@@ -102,7 +102,7 @@
         <h2>Real projects, right here in mid-Michigan</h2>
         <p>Every photo is our own crew’s work — no stock images.</p>
       </div>
-      <div class="gallery"><figure class=""><img src="img/pp-1.jpg" alt="Paver patio with seating and landscaped border" loading="lazy"><figcaption>Paver patio with seating and landscaped border</figcaption></figure><figure class=""><img src="img/hs-07.jpg" alt="Fresh paver patio installation with base prep" loading="lazy"></figure><figure class=""><img src="img/pp-4.jpg" alt="Curved paver walkway wrapping around a porch" loading="lazy"><figcaption>Walkway to the driveway, from above</figcaption></figure><figure class=""><img src="img/pp-2.jpg" alt="Aerial view of a paver walkway to the driveway" loading="lazy"><figcaption>Fresh installation on a compacted base</figcaption></figure></div>
+      <div class="gallery g3"><figure class=""><img src="img/pp-1.jpg" alt="Paver patio with seating and landscaped border" loading="lazy"><figcaption>Paver patio with seating and landscaped border</figcaption></figure><figure class=""><img src="img/hs-07.jpg" alt="Fresh paver patio installation with base prep" loading="lazy"></figure><figure class=""><img src="img/pp-walk.jpg" alt="New walkway wrapping the porch out to the driveway" loading="lazy"><figcaption>Walkway wrapping the porch out to the driveway</figcaption></figure></div>
     </div>
   </section>
   <!-- MEET THE OWNERS -->
@@ -181,6 +181,32 @@
         <a class="btn btn-call" href="tel:+19897633899" onclick="njCall()" style="font-size:1.15rem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg> (989) 763-3899</a>
         <p class="note" style="margin-top:12px">Open 7am–7pm · Mon–Sat</p>
       </div>
+    </div>
+  </section>
+
+  <!-- BEFORE / AFTER -->
+  <section class="benefits">
+    <div class="wrap">
+      <div class="sec-head" style="margin-left:auto;margin-right:auto;text-align:center">
+        <span class="eyebrow" style="justify-content:center">Before &amp; after</span>
+        <h2>Drag the handle. Same yards, real jobs.</h2>
+      </div>
+      <div class="ba" data-ba>
+        <img class="ba-after" src="img/ba-path-after.jpg" alt="After: new walkway wrapping the porch to the driveway with the lawn grown back in" loading="lazy">
+        <div class="ba-topwrap"><img class="ba-before" src="img/ba-path-before.jpg" alt="Before: the old worn concrete path beside the porch steps" loading="lazy"></div>
+        <span class="ba-tag ba-tag-l">Before</span>
+        <span class="ba-tag ba-tag-r">After</span>
+        <div class="ba-line" aria-hidden="true"><span class="ba-grip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" transform="translate(-3 0)"/><polyline points="9 18 15 12 9 6" transform="translate(3 0)"/></svg></span></div>
+      </div>
+      <p class="ba-cap">The old concrete path torn out &mdash; a new walkway wrapped from the porch out to the driveway, with the lawn regraded and reseeded along the edge.</p>
+      <div class="ba" data-ba>
+        <img class="ba-after" src="img/ba-gravel-after.jpg" alt="After: clean timber-edged gravel bed running along the house" loading="lazy">
+        <div class="ba-topwrap"><img class="ba-before" src="img/ba-gravel-before.jpg" alt="Before: excavator tearing out brush and stumps in the overgrown side yard" loading="lazy"></div>
+        <span class="ba-tag ba-tag-l">Before</span>
+        <span class="ba-tag ba-tag-r">After</span>
+        <div class="ba-line" aria-hidden="true"><span class="ba-grip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" transform="translate(-3 0)"/><polyline points="9 18 15 12 9 6" transform="translate(3 0)"/></svg></span></div>
+      </div>
+      <p class="ba-cap">Overgrown side yard dug out with brush and stumps removed &mdash; rebuilt as a clean, timber-edged gravel bed.</p>
     </div>
   </section>
 
@@ -276,6 +302,22 @@
       .catch(function(){ btn.disabled=false; btn.textContent='Get My Free Quote'; alert('Something went wrong sending the form — please call (989) 763-3899.'); });
     return false;
   }
+
+  // --- Before/after sliders (grip low for mobile thumbs) ---
+  document.querySelectorAll('[data-ba]').forEach(function(ba){
+    var top=ba.querySelector('.ba-topwrap'), line=ba.querySelector('.ba-line');
+    function setPos(p){ p=Math.max(2,Math.min(98,p));
+      top.style.clipPath='inset(0 '+(100-p)+'% 0 0)';
+      line.style.left=p+'%'; }
+    setPos(50);
+    function move(e){ var r=ba.getBoundingClientRect();
+      var x=(e.touches?e.touches[0].clientX:e.clientX)-r.left;
+      setPos(x/r.width*100); }
+    ba.addEventListener('pointerdown',function(e){ e.preventDefault(); ba.setPointerCapture(e.pointerId); move(e);
+      ba.addEventListener('pointermove',move); });
+    ba.addEventListener('pointerup',function(){ ba.removeEventListener('pointermove',move); });
+    ba.addEventListener('pointercancel',function(){ ba.removeEventListener('pointermove',move); });
+  });
 
   document.addEventListener('dragstart',function(e){ if(e.target.tagName==='IMG') e.preventDefault(); });
 
