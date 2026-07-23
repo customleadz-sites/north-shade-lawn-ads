@@ -79,7 +79,7 @@ main,header,footer{position:relative;z-index:2}
 .hero .bg img{width:100%;height:100%;object-fit:cover}
 .hero .bg::after{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(18,54,38,.72) 0%,rgba(18,54,38,.62) 40%,rgba(10,28,20,.85) 100%);
+  background:linear-gradient(180deg,rgba(23,25,24,.68) 0%,rgba(23,25,24,.56) 40%,rgba(11,12,12,.86) 100%);
 }
 .hero .wrap{position:relative;z-index:2}
 .hero-grid{display:grid;gap:30px}
