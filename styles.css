@@ -288,3 +288,7 @@ details p{padding:0 6px 20px 2px;color:#5a6157;font-size:1rem}
 .reveal{opacity:0;animation:fadeUp .7s cubic-bezier(.2,.7,.2,1) forwards}
 .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}.d5{animation-delay:.45s}
 @media(prefers-reduced-motion:reduce){.reveal{animation:none;opacity:1}}
+
+/* gallery captions */
+.gallery figure{display:flex;flex-direction:column}
+.gallery figcaption{font-size:.86rem;color:#5a6157;padding:8px 6px 0;font-weight:500}
