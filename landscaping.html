@@ -184,6 +184,23 @@
     </div>
   </section>
 
+  <!-- BEFORE / AFTER -->
+  <section class="benefits">
+    <div class="wrap">
+      <div class="sec-head" style="margin-left:auto;margin-right:auto;text-align:center">
+        <span class="eyebrow" style="justify-content:center">Before &amp; after</span>
+        <h2>Same house. One project.</h2>
+        <p>Overgrown foundation beds stripped out and rebuilt with fresh mulch, boulders, and new plantings. Drag the handle to compare.</p>
+      </div>
+      <div class="ba" id="ba">
+        <img class="ba-after" src="img/ba-after.jpg" alt="After: rebuilt foundation beds with fresh mulch, boulder accents, and new plantings" loading="lazy">
+        <div class="ba-topwrap"><img class="ba-before" src="img/ba-before.jpg" alt="Before: overgrown shrubs and bare dirt against the house" loading="lazy"></div>
+        <span class="ba-tag ba-tag-l">Before</span>
+        <span class="ba-tag ba-tag-r">After</span>
+        <div class="ba-line" aria-hidden="true"><span class="ba-grip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" transform="translate(-3 0)"/><polyline points="9 18 15 12 9 6" transform="translate(3 0)"/></svg></span></div>
+      </div>
+    </div>
+  </section>
   <!-- FAQ -->
   <section class="benefits">
     <div class="wrap">
@@ -276,6 +293,24 @@
       .catch(function(){ btn.disabled=false; btn.textContent='Get My Free Quote'; alert('Something went wrong sending the form — please call (989) 763-3899.'); });
     return false;
   }
+
+
+  // --- Before/after slider (handle low for mobile thumbs) ---
+  (function(){
+    var ba=document.getElementById('ba'); if(!ba) return;
+    var top=ba.querySelector('.ba-topwrap'), line=ba.querySelector('.ba-line');
+    function setPos(p){ p=Math.max(2,Math.min(98,p));
+      top.style.clipPath='inset(0 '+(100-p)+'% 0 0)';
+      line.style.left=p+'%'; }
+    setPos(50);
+    function move(e){ var r=ba.getBoundingClientRect();
+      var x=(e.touches?e.touches[0].clientX:e.clientX)-r.left;
+      setPos(x/r.width*100); }
+    ba.addEventListener('pointerdown',function(e){ ba.setPointerCapture(e.pointerId); move(e);
+      ba.addEventListener('pointermove',move); });
+    ba.addEventListener('pointerup',function(){ ba.removeEventListener('pointermove',move); });
+    ba.addEventListener('pointercancel',function(){ ba.removeEventListener('pointermove',move); });
+  })();
 
   // --- Recent-work lightbox ---
   (function(){

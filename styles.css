@@ -302,3 +302,14 @@ details p{padding:0 6px 20px 2px;color:#5a6157;font-size:1rem}
 .year-badge svg{width:32px;height:32px;color:#ffc53d;flex:none}
 .year-badge b{display:block;font-family:var(--work);font-weight:700;text-transform:uppercase;font-size:1.3rem;line-height:1.05;letter-spacing:.03em;color:var(--forest)}
 .year-badge small{display:block;font-size:12.5px;color:#5a6157;font-weight:500;margin-top:2px}
+
+/* before/after slider — grip sits LOW so a thumb doesn't cover the photo */
+.ba{position:relative;max-width:860px;margin:0 auto;aspect-ratio:4/3;border:2px solid var(--forest);border-radius:4px;overflow:hidden;box-shadow:8px 8px 0 rgba(18,54,38,.85);touch-action:none;cursor:ew-resize;user-select:none}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba-topwrap{position:absolute;inset:0;clip-path:inset(0 50% 0 0)}
+.ba-tag{position:absolute;top:12px;font-family:var(--work);font-weight:700;text-transform:uppercase;font-size:15px;letter-spacing:.06em;color:#fff;background:var(--forest);padding:5px 12px;border-radius:3px;z-index:3}
+.ba-tag-l{left:12px}
+.ba-tag-r{right:12px;background:var(--leaf)}
+.ba-line{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;z-index:2;transform:translateX(-50%);box-shadow:0 0 8px rgba(0,0,0,.4)}
+.ba-grip{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);width:52px;height:52px;border-radius:50%;background:#fff;border:2px solid var(--forest);display:grid;place-items:center;color:var(--forest);box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.ba-grip svg{width:26px;height:26px}
