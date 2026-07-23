@@ -296,3 +296,9 @@ details p{padding:0 6px 20px 2px;color:#5a6157;font-size:1rem}
 .gallery img{aspect-ratio:4/3;border-radius:14px;box-shadow:var(--shadow-sm);height:auto}
 .gallery figure:hover img{transform:none}
 .gallery figcaption{font-size:.86rem;color:#5a6157;padding:8px 6px 0;font-weight:500}
+
+/* hero year badge — matches the work-order form language */
+.year-badge{display:inline-flex;align-items:center;gap:13px;background:var(--white);color:var(--ink);border:2px solid var(--forest);border-radius:4px;padding:13px 20px;box-shadow:5px 5px 0 rgba(18,54,38,.85);margin-top:8px}
+.year-badge svg{width:32px;height:32px;color:#ffc53d;flex:none}
+.year-badge b{display:block;font-family:var(--work);font-weight:700;text-transform:uppercase;font-size:1.3rem;line-height:1.05;letter-spacing:.03em;color:var(--forest)}
+.year-badge small{display:block;font-size:12.5px;color:#5a6157;font-weight:500;margin-top:2px}
