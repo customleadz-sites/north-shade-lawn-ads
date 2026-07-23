@@ -189,16 +189,24 @@
     <div class="wrap">
       <div class="sec-head" style="margin-left:auto;margin-right:auto;text-align:center">
         <span class="eyebrow" style="justify-content:center">Before &amp; after</span>
-        <h2>Same house. One project.</h2>
-        <p>Overgrown foundation beds stripped out and rebuilt with fresh mulch, boulders, and new plantings. Drag the handle to compare.</p>
+        <h2>Drag the handle. Same yards, real jobs.</h2>
       </div>
-      <div class="ba" id="ba">
+      <div class="ba" data-ba>
+        <img class="ba-after" src="img/ba-walls-after.jpg" alt="After: regraded slope with natural stone steps and a new gravel parking pad bordered with railroad ties" loading="lazy">
+        <div class="ba-topwrap"><img class="ba-before" src="img/ba-walls-before.jpg" alt="Before: failing wood retaining walls terracing the yard with rotten wooden stairs" loading="lazy"></div>
+        <span class="ba-tag ba-tag-l">Before</span>
+        <span class="ba-tag ba-tag-r">After</span>
+        <div class="ba-line" aria-hidden="true"><span class="ba-grip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" transform="translate(-3 0)"/><polyline points="9 18 15 12 9 6" transform="translate(3 0)"/></svg></span></div>
+      </div>
+      <p class="ba-cap">Failing wood retaining walls torn out &mdash; lawn regraded, natural stone steps set, and a gravel parking space bordered with railroad ties.</p>
+      <div class="ba" data-ba>
         <img class="ba-after" src="img/ba-after.jpg" alt="After: rebuilt foundation beds with fresh mulch, boulder accents, and new plantings" loading="lazy">
         <div class="ba-topwrap"><img class="ba-before" src="img/ba-before.jpg" alt="Before: overgrown shrubs and bare dirt against the house" loading="lazy"></div>
         <span class="ba-tag ba-tag-l">Before</span>
         <span class="ba-tag ba-tag-r">After</span>
         <div class="ba-line" aria-hidden="true"><span class="ba-grip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" transform="translate(-3 0)"/><polyline points="9 18 15 12 9 6" transform="translate(3 0)"/></svg></span></div>
       </div>
+      <p class="ba-cap">Overgrown foundation beds stripped out and rebuilt with fresh mulch, boulders, and low-care plantings.</p>
     </div>
   </section>
   <!-- FAQ -->
@@ -295,9 +303,8 @@
   }
 
 
-  // --- Before/after slider (handle low for mobile thumbs) ---
-  (function(){
-    var ba=document.getElementById('ba'); if(!ba) return;
+  // --- Before/after sliders (grip low for mobile thumbs) ---
+  document.querySelectorAll('[data-ba]').forEach(function(ba){
     var top=ba.querySelector('.ba-topwrap'), line=ba.querySelector('.ba-line');
     function setPos(p){ p=Math.max(2,Math.min(98,p));
       top.style.clipPath='inset(0 '+(100-p)+'% 0 0)';
@@ -310,7 +317,7 @@
       ba.addEventListener('pointermove',move); });
     ba.addEventListener('pointerup',function(){ ba.removeEventListener('pointermove',move); });
     ba.addEventListener('pointercancel',function(){ ba.removeEventListener('pointermove',move); });
-  })();
+  });
 
   document.addEventListener('dragstart',function(e){ if(e.target.tagName==='IMG') e.preventDefault(); });
 

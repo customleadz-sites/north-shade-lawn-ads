@@ -313,3 +313,6 @@ details p{padding:0 6px 20px 2px;color:#5a6157;font-size:1rem}
 .ba-line{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;z-index:2;transform:translateX(-50%);box-shadow:0 0 8px rgba(0,0,0,.4)}
 .ba-grip{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);width:52px;height:52px;border-radius:50%;background:#fff;border:2px solid var(--forest);display:grid;place-items:center;color:var(--forest);box-shadow:0 4px 14px rgba(0,0,0,.35)}
 .ba-grip svg{width:26px;height:26px}
+
+.ba-cap{max-width:860px;margin:14px auto 34px;text-align:center;font-size:.95rem;color:#5a6157}
+.ba-cap:last-child{margin-bottom:0}
