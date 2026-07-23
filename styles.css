@@ -114,7 +114,7 @@ main,header,footer{position:relative;z-index:2}
 .quote .field{margin-bottom:14px}
 .quote input,.quote textarea,.quote select{
   width:100%;font-family:inherit;font-size:16px;color:var(--ink);
-  padding:12px 13px;border:2px solid #b9b29f;border-radius:3px;background:#fff;
+  padding:12px 13px;border:1px solid #c4c4c4;border-radius:3px;background:#fff;
   transition:border-color .12s ease;
 }
 .quote input:focus,.quote textarea:focus,.quote select:focus{
@@ -125,11 +125,10 @@ main,header,footer{position:relative;z-index:2}
   width:100%;border:2px solid var(--forest);cursor:pointer;font-family:var(--work);font-weight:700;
   font-size:1.35rem;color:#fff;padding:14px;border-radius:3px;letter-spacing:.04em;text-transform:uppercase;
   background:var(--leaf);
-  box-shadow:4px 4px 0 var(--forest);
-  transition:transform .1s ease,box-shadow .1s ease;
+  transition:filter .12s ease;
 }
-.submit:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--forest)}
-.submit:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--forest)}
+.submit:hover{filter:brightness(1.07)}
+.submit:active{filter:brightness(.95)}
 .friction{text-align:center;font-size:12.5px;color:#6b7166;margin-top:11px}
 .friction b{color:var(--forest)}
 
