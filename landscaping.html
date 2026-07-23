@@ -306,11 +306,13 @@
     function move(e){ var r=ba.getBoundingClientRect();
       var x=(e.touches?e.touches[0].clientX:e.clientX)-r.left;
       setPos(x/r.width*100); }
-    ba.addEventListener('pointerdown',function(e){ ba.setPointerCapture(e.pointerId); move(e);
+    ba.addEventListener('pointerdown',function(e){ e.preventDefault(); ba.setPointerCapture(e.pointerId); move(e);
       ba.addEventListener('pointermove',move); });
     ba.addEventListener('pointerup',function(){ ba.removeEventListener('pointermove',move); });
     ba.addEventListener('pointercancel',function(){ ba.removeEventListener('pointermove',move); });
   })();
+
+  document.addEventListener('dragstart',function(e){ if(e.target.tagName==='IMG') e.preventDefault(); });
 
   // --- Recent-work lightbox ---
   (function(){
