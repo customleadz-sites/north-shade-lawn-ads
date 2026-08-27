@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/ls-hero.jpg">
+<link rel="preload" as="image" href="img/ls-hero.webp" imagesrcset="img/ls-hero-m.webp 800w, img/ls-hero.webp 1600w" imagesizes="100vw">
 <link rel="stylesheet" href="styles.css">
 <script src="loc-headline.js" defer></script>
 <link rel="icon" href="img/logo.png">
@@ -46,7 +46,7 @@
 <main>
   <!-- HERO -->
   <section class="hero">
-    <div class="bg"><img src="img/ls-hero.jpg" alt="Landscaped waterfront with fresh sod and natural stone by North Shade Lawn" fetchpriority="high"></div>
+    <div class="bg"><img src="img/ls-hero.webp" srcset="img/ls-hero-m.webp 800w, img/ls-hero.webp 1600w" sizes="100vw" width="1600" height="1200" alt="Landscaped waterfront with fresh sod and natural stone by North Shade Lawn" fetchpriority="high"></div>
     <div class="wrap">
       <div class="hero-grid">
         <div class="hero-copy">
@@ -102,7 +102,7 @@
         <h2>Real projects, right here in mid-Michigan</h2>
         <p>Every photo is our own crew’s work — no stock images.</p>
       </div>
-      <div class="gallery"><figure class=""><img src="img/ls-05.jpg" alt="Terraced retaining walls with fresh sod being laid between them" loading="lazy"><figcaption>Terraced retaining walls with fresh sod laid between</figcaption></figure><figure class=""><img src="img/ls-07.jpg" alt="Landscaped bed with boulder edging and patio seating" loading="lazy"><figcaption>Boulder-edged beds beside a new patio space</figcaption></figure><figure class=""><img src="img/ls-1.jpg" alt="Fresh mulched garden bed with boulder border" loading="lazy"><figcaption>Fresh mulched garden bed with boulder border</figcaption></figure><figure class=""><img src="img/ls-2.jpg" alt="New sod lawn installation around mature tree" loading="lazy"><figcaption>New sod lawn around a mature tree</figcaption></figure></div>
+      <div class="gallery"><figure class=""><img src="img/ls-05.webp" width="1000" height="750" alt="Terraced retaining walls with fresh sod being laid between them" loading="lazy"><figcaption>Terraced retaining walls with fresh sod laid between</figcaption></figure><figure class=""><img src="img/ls-07.webp" width="1000" height="750" alt="Landscaped bed with boulder edging and patio seating" loading="lazy"><figcaption>Boulder-edged beds beside a new patio space</figcaption></figure><figure class=""><img src="img/ls-1.webp" width="1000" height="750" alt="Fresh mulched garden bed with boulder border" loading="lazy"><figcaption>Fresh mulched garden bed with boulder border</figcaption></figure><figure class=""><img src="img/ls-2.webp" width="1000" height="750" alt="New sod lawn installation around mature tree" loading="lazy"><figcaption>New sod lawn around a mature tree</figcaption></figure></div>
     </div>
   </section>
   <!-- MEET THE OWNERS -->
@@ -192,16 +192,16 @@
         <h2>Drag the handle. Same yards, real jobs.</h2>
       </div>
       <div class="ba" data-ba>
-        <img class="ba-after" src="img/ba-walls-after.jpg" alt="After: regraded slope with natural stone steps and a new gravel parking pad bordered with railroad ties" loading="lazy">
-        <div class="ba-topwrap"><img class="ba-before" src="img/ba-walls-before.jpg" alt="Before: failing wood retaining walls terracing the yard with rotten wooden stairs" loading="lazy"></div>
+        <img class="ba-after" src="img/ba-walls-after.webp" width="1400" height="1050" alt="After: regraded slope with natural stone steps and a new gravel parking pad bordered with railroad ties" loading="lazy">
+        <div class="ba-topwrap"><img class="ba-before" src="img/ba-walls-before.webp" width="1400" height="1050" alt="Before: failing wood retaining walls terracing the yard with rotten wooden stairs" loading="lazy"></div>
         <span class="ba-tag ba-tag-l">Before</span>
         <span class="ba-tag ba-tag-r">After</span>
         <div class="ba-line" aria-hidden="true"><span class="ba-grip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" transform="translate(-3 0)"/><polyline points="9 18 15 12 9 6" transform="translate(3 0)"/></svg></span></div>
       </div>
       <p class="ba-cap">Failing wood retaining walls torn out &mdash; lawn regraded, natural stone steps set, and a gravel parking space bordered with railroad ties.</p>
       <div class="ba" data-ba>
-        <img class="ba-after" src="img/ba-after.jpg" alt="After: rebuilt foundation beds with fresh mulch, boulder accents, and new plantings" loading="lazy">
-        <div class="ba-topwrap"><img class="ba-before" src="img/ba-before.jpg" alt="Before: overgrown shrubs and bare dirt against the house" loading="lazy"></div>
+        <img class="ba-after" src="img/ba-after.webp" width="1400" height="1050" alt="After: rebuilt foundation beds with fresh mulch, boulder accents, and new plantings" loading="lazy">
+        <div class="ba-topwrap"><img class="ba-before" src="img/ba-before.webp" width="1400" height="1050" alt="Before: overgrown shrubs and bare dirt against the house" loading="lazy"></div>
         <span class="ba-tag ba-tag-l">Before</span>
         <span class="ba-tag ba-tag-r">After</span>
         <div class="ba-line" aria-hidden="true"><span class="ba-grip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" transform="translate(-3 0)"/><polyline points="9 18 15 12 9 6" transform="translate(3 0)"/></svg></span></div>
@@ -280,8 +280,8 @@
 </div>
 
 <script>
-  // --- Conversion tracking stubs. Wire to real gtag IDs before launch. ---
-  function njCall(){ if(window.gtag) gtag('event','conversion',{send_to:'AW-XXXX/call'}); }
+  // tel taps are tracked by Google's number-swap (Call From Website) — no extra event, or calls double-count
+  function njCall(){}
   function njSubmit(e){
     e.preventDefault();
     var f=e.target, btn=f.querySelector('.submit');
@@ -292,12 +292,16 @@
       var parts=(f.name.value||'').trim().split(/\s+/);
       gtag('set','user_data',{ phone_number: digits?('+'+digits):undefined,
         address:{ first_name: parts[0]||undefined, last_name: parts.length>1?parts[parts.length-1]:undefined } });
-      gtag('event','conversion',{send_to:'AW-18242425589/rX41CNOSrNQcEPWl1fpD',value:1.0,currency:'USD'});
     }
     btn.disabled=true; btn.textContent='Sending…';
     fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
       .then(function(r){ return r.json(); })
-      .then(function(d){ if(!d.success) throw new Error(d.message); window.location.href='thank-you'; })
+      .then(function(d){ if(!d.success) throw new Error(d.message);
+        // conversion fires only on a confirmed send; event_callback (with timeout fallback) then redirects
+        var go=function(){ window.location.href='thank-you'; };
+        if(window.gtag){ gtag('event','conversion',{send_to:'AW-18242425589/rX41CNOSrNQcEPWl1fpD',value:1.0,currency:'USD',event_callback:go}); setTimeout(go,1200); }
+        else go();
+      })
       .catch(function(){ btn.disabled=false; btn.textContent='Get My Free Quote'; alert('Something went wrong sending the form — please call (989) 763-3899.'); });
     return false;
   }

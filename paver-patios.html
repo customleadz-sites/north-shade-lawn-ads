@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/pp-hero.jpg">
+<link rel="preload" as="image" href="img/pp-hero.webp" imagesrcset="img/pp-hero-m.webp 800w, img/pp-hero.webp 1600w" imagesizes="100vw">
 <link rel="stylesheet" href="styles.css">
 <script src="loc-headline.js" defer></script>
 <link rel="icon" href="img/logo.png">
@@ -46,7 +46,7 @@
 <main>
   <!-- HERO -->
   <section class="hero">
-    <div class="bg"><img src="img/pp-hero.jpg" alt="Large paver patio with outdoor furniture and white picket fence by North Shade Lawn" fetchpriority="high"></div>
+    <div class="bg"><img src="img/pp-hero.webp" srcset="img/pp-hero-m.webp 800w, img/pp-hero.webp 1600w" sizes="100vw" width="1600" height="1200" alt="Large paver patio with outdoor furniture and white picket fence by North Shade Lawn" fetchpriority="high"></div>
     <div class="wrap">
       <div class="hero-grid">
         <div class="hero-copy">
@@ -102,7 +102,7 @@
         <h2>Real projects, right here in mid-Michigan</h2>
         <p>Every photo is our own crew’s work — no stock images.</p>
       </div>
-      <div class="gallery g3"><figure class=""><img src="img/pp-1.jpg" alt="Paver patio with seating and landscaped border" loading="lazy"><figcaption>Paver patio with seating and landscaped border</figcaption></figure><figure class=""><img src="img/hs-07.jpg" alt="Fresh paver patio installation with base prep" loading="lazy"></figure><figure class=""><img src="img/pp-walk.jpg" alt="New walkway wrapping the porch out to the driveway" loading="lazy"><figcaption>Walkway wrapping the porch out to the driveway</figcaption></figure></div>
+      <div class="gallery g3"><figure class=""><img src="img/pp-1.webp" width="1000" height="750" alt="Paver patio with seating and landscaped border" loading="lazy"><figcaption>Paver patio with seating and landscaped border</figcaption></figure><figure class=""><img src="img/hs-07.webp" width="1000" height="750" alt="Fresh paver patio installation with base prep" loading="lazy"></figure><figure class=""><img src="img/pp-walk.webp" width="1000" height="750" alt="New walkway wrapping the porch out to the driveway" loading="lazy"><figcaption>Walkway wrapping the porch out to the driveway</figcaption></figure></div>
     </div>
   </section>
   <!-- MEET THE OWNERS -->
@@ -192,16 +192,16 @@
         <h2>Drag the handle. Same yards, real jobs.</h2>
       </div>
       <div class="ba" data-ba>
-        <img class="ba-after" src="img/ba-path-after.jpg" alt="After: new walkway wrapping the porch to the driveway with the lawn grown back in" loading="lazy">
-        <div class="ba-topwrap"><img class="ba-before" src="img/ba-path-before.jpg" alt="Before: the old worn concrete path beside the porch steps" loading="lazy"></div>
+        <img class="ba-after" src="img/ba-path-after.webp" width="1400" height="1050" alt="After: new walkway wrapping the porch to the driveway with the lawn grown back in" loading="lazy">
+        <div class="ba-topwrap"><img class="ba-before" src="img/ba-path-before.webp" width="1400" height="1050" alt="Before: the old worn concrete path beside the porch steps" loading="lazy"></div>
         <span class="ba-tag ba-tag-l">Before</span>
         <span class="ba-tag ba-tag-r">After</span>
         <div class="ba-line" aria-hidden="true"><span class="ba-grip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" transform="translate(-3 0)"/><polyline points="9 18 15 12 9 6" transform="translate(3 0)"/></svg></span></div>
       </div>
       <p class="ba-cap">The old concrete path torn out &mdash; a new walkway wrapped from the porch out to the driveway, with the lawn regraded and reseeded along the edge.</p>
       <div class="ba" data-ba>
-        <img class="ba-after" src="img/ba-gravel-after.jpg" alt="After: clean timber-edged gravel bed running along the house" loading="lazy">
-        <div class="ba-topwrap"><img class="ba-before" src="img/ba-gravel-before.jpg" alt="Before: excavator tearing out brush and stumps in the overgrown side yard" loading="lazy"></div>
+        <img class="ba-after" src="img/ba-gravel-after.webp" width="1400" height="1050" alt="After: clean timber-edged gravel bed running along the house" loading="lazy">
+        <div class="ba-topwrap"><img class="ba-before" src="img/ba-gravel-before.webp" width="1400" height="1050" alt="Before: excavator tearing out brush and stumps in the overgrown side yard" loading="lazy"></div>
         <span class="ba-tag ba-tag-l">Before</span>
         <span class="ba-tag ba-tag-r">After</span>
         <div class="ba-line" aria-hidden="true"><span class="ba-grip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" transform="translate(-3 0)"/><polyline points="9 18 15 12 9 6" transform="translate(3 0)"/></svg></span></div>
@@ -281,8 +281,8 @@
 </div>
 
 <script>
-  // --- Conversion tracking stubs. Wire to real gtag IDs before launch. ---
-  function njCall(){ if(window.gtag) gtag('event','conversion',{send_to:'AW-XXXX/call'}); }
+  // tel taps are tracked by Google's number-swap (Call From Website) — no extra event, or calls double-count
+  function njCall(){}
   function njSubmit(e){
     e.preventDefault();
     var f=e.target, btn=f.querySelector('.submit');
@@ -293,12 +293,16 @@
       var parts=(f.name.value||'').trim().split(/\s+/);
       gtag('set','user_data',{ phone_number: digits?('+'+digits):undefined,
         address:{ first_name: parts[0]||undefined, last_name: parts.length>1?parts[parts.length-1]:undefined } });
-      gtag('event','conversion',{send_to:'AW-18242425589/rX41CNOSrNQcEPWl1fpD',value:1.0,currency:'USD'});
     }
     btn.disabled=true; btn.textContent='Sending…';
     fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
       .then(function(r){ return r.json(); })
-      .then(function(d){ if(!d.success) throw new Error(d.message); window.location.href='thank-you'; })
+      .then(function(d){ if(!d.success) throw new Error(d.message);
+        // conversion fires only on a confirmed send; event_callback (with timeout fallback) then redirects
+        var go=function(){ window.location.href='thank-you'; };
+        if(window.gtag){ gtag('event','conversion',{send_to:'AW-18242425589/rX41CNOSrNQcEPWl1fpD',value:1.0,currency:'USD',event_callback:go}); setTimeout(go,1200); }
+        else go();
+      })
       .catch(function(){ btn.disabled=false; btn.textContent='Get My Free Quote'; alert('Something went wrong sending the form — please call (989) 763-3899.'); });
     return false;
   }
